@@ -14,7 +14,9 @@ import TabOption from './TabOption'
 type Props = {
   tabStyle: ViewStyleProp,
   firstTabStyle: ViewStyleProp,
+  firstTabTextStyle: TextStyleProp,
   lastTabStyle: ViewStyleProp,
+  lastTabTextStyle: TextStyleProp,
   activeTabStyle: ViewStyleProp,
   tabTextStyle: TextStyleProp,
   activeTabTextStyle: TextStyleProp,
@@ -105,7 +107,9 @@ export default class SegmentedControlTab extends PureComponent<Props> {
     tabsContainerDisableStyle: { opacity: 0.6 },
     tabStyle: {},
     firstTabStyle: {},
+    firstTabTextStyle: {},
     lastTabStyle: {},
+    lastTabTextStyle: {},
     activeTabStyle: {},
     tabTextStyle: {},
     activeTabTextStyle: {},
@@ -133,7 +137,9 @@ export default class SegmentedControlTab extends PureComponent<Props> {
       tabsContainerDisableStyle,
       tabStyle,
       firstTabStyle,
+      firstTabTextStyle,
       lastTabStyle,
+      lastTabTextStyle,
       activeTabStyle,
       tabTextStyle,
       activeTabTextStyle,
@@ -197,9 +203,17 @@ export default class SegmentedControlTab extends PureComponent<Props> {
               firstTabStyle={
                 index === 0 ? [{ borderRightWidth: 0 }, firstTabStyleDefault, firstTabStyle] : {}
               }
+              firstTabTextStyle={
+                index === 0 ? firstTabTextStyle : {}
+              }
               lastTabStyle={
                 index === values.length - 1
                   ? [{ borderLeftWidth: 0 }, lastTabStyleDefault, lastTabStyle]
+                  : {}
+              }
+              lastTabTextStyle={
+                index === values.length - 1
+                  ? lastTabStyle
                   : {}
               }
               tabStyle={[

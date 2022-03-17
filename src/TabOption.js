@@ -20,7 +20,9 @@ type Props = {
   badge?: any,
   text: string,
   firstTabStyle?: ViewStyleProp,
+  firstTabTextStyle?: TextStyleProp,
   lastTabStyle?: ViewStyleProp,
+  lastTabTextStyle?: TextStyleProp,
   tabStyle?: ViewStyleProp,
   activeTabStyle?: ViewStyleProp,
   tabTextStyle?: TextStyleProp,
@@ -85,7 +87,9 @@ export default class TabOption extends PureComponent<Props> {
     index: 0,
     badge: '',
     firstTabStyle: {},
+    firstTabTextStyle: {},
     lastTabStyle: {},
+    lastTabTextStyle: {},
     tabStyle: {},
     activeTabStyle: {},
     tabTextStyle: {},
@@ -111,7 +115,9 @@ export default class TabOption extends PureComponent<Props> {
       badge,
       text,
       firstTabStyle,
+      firstTabTextStyle,
       lastTabStyle,
+      lastTabTextStyle,
       tabStyle,
       activeTabStyle,
       tabTextStyle,
@@ -152,6 +158,8 @@ export default class TabOption extends PureComponent<Props> {
             style={[
               styles.tabTextStyle,
               tabTextStyle,
+              firstTabTextStyle,
+              lastTabTextStyle,
               isTabActive
                 ? [styles.activeTabTextStyle, activeTabTextStyle]
                 : {},
