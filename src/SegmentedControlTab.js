@@ -213,7 +213,7 @@ export default class SegmentedControlTab extends PureComponent<Props> {
               }
               lastTabTextStyle={
                 index === values.length - 1
-                  ? lastTabStyle
+                  ? lastTabTextStyle
                   : {}
               }
               tabStyle={[
